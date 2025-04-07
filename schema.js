@@ -8,13 +8,15 @@ exports.typeDefs = gql`
         email: String!
         gender: String!
         salary: Float!
+        department: String     # ✅ Added
+        photo: String          # ✅ Added
         created: String
         updatedat: String
     }
 
     type User {
         id: ID
-        _id: ID          # ✅ Added this to match MongoDB _id if needed
+        _id: ID
         username: String!
         email: String!
         password: String!
@@ -26,7 +28,7 @@ exports.typeDefs = gql`
         message: String
         status: Boolean
         error: String
-        token: String     # ✅ Added this to avoid "token not defined" error
+        token: String
         employee: Employee
         user: User
     }
@@ -44,6 +46,8 @@ exports.typeDefs = gql`
             email: String!
             gender: String!
             salary: Float!
+            department: String     # ✅ Added
+            photo: String          # ✅ Added
         ): Message
 
         updateEmployee(
@@ -53,6 +57,8 @@ exports.typeDefs = gql`
             email: String!
             gender: String!
             salary: Float!
+            department: String     
+            photo: String          
         ): Message
 
         deleteEmployee(id: String!): Message
